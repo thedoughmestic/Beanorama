@@ -1,0 +1,523 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  text-decoration: none;
+}
+
+/* Variables */
+:root {
+  --main-color: #bc9667;
+  --second-color: #edeae3;
+  --text-color: #1b1b1b;
+  --bg-color: #fff;
+
+  /* Box Shadow */
+  --box-shadow: 2px 2px 10px 4px rgb(14 55 54 / 15%);
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 100px;
+  background: var(--text-color);
+  transition: 0.5s linear;
+}
+
+.logo img {
+  width: 60px;
+}
+
+.navbar {
+  display: flex;
+}
+
+.navbar a {
+  padding: 8px;
+  color: var(--bg-color);
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  background: var(--main-color);
+  border-radius: 0.2rem;
+  transition: 0.2s all linear;
+}
+
+.header-icon {
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  column-gap: 0.8rem;
+  margin-left: 1.5rem;
+}
+
+.header-icon .bx {
+  color: var(--bg-color);
+}
+
+.header-icon .bx:hover {
+  color: var(--main-color);
+}
+
+#Menu-Icon {
+  color: var(--bg-color);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.search-box {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background: var(--bg-color);
+  width: 100%;
+  display: none; /* Hanya tampilkan saat diperlukan */
+}
+.search-box.active {
+  top: 110%;
+  box-shadow: var(--box-shadow);
+  transition: 0.2s all linear;
+}
+.search-box input {
+  padding: 20px;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1rem;
+  color: var(--main-color);
+}
+
+.home {
+  width: 100%;
+  min-height: 100vh;
+  background: url("bg.png") no-repeat center center/cover;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, auto));
+  align-items: center;
+  padding: 50px 100px;
+}
+
+.home-text h1 {
+  font-size: 2.4rem;
+  color: var(--main-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.home-text p {
+  font-size: 0.938rem;
+  color: var(--bg-color);
+  margin: 0.5rem 0 1.4rem;
+}
+
+.btn {
+  padding: 9px 30px;
+  border-radius: 0.2rem;
+  background: var(--main-color);
+  color: var(--bg-color);
+  font-weight: 350;
+}
+
+.btn:hover {
+  background: #8a6f4d;
+}
+
+.home-img img {
+  width: 100%;
+}
+.about {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, auto));
+  align-items: center;
+  padding: 50px 100px;
+}
+.about-img img {
+  width: 90%;
+}
+.about-text h2 {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+.about-text p {
+  font-size: 0.938rem;
+  margin: 0.5rem 0 1.1rem;
+}
+.heading {
+  text-align: center;
+}
+.heading h2 {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+/* Product Section */
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.products-container .box {
+  position: relative;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+}
+.products-container img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  object-position: center;
+  padding: 20px;
+  background: #f1f1f1;
+  border-radius: 0.5rem;
+}
+.products-container .box h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0.5rem 0 0.5rem;
+}
+.products-container .box .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.products-container .box .content span {
+  padding: 0 1rem;
+  color: var(--bg-color);
+  background: var(--main-color);
+  border-radius: 4px;
+  font-weight: 500;
+}
+.products-container .box .content a {
+  padding: 0 1rem;
+  color: var(--text-color);
+  border: 2px solid var(--main-color);
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.customer-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 3fr)
+  ); /* Membuat kolom agar berjejer sesuai ukuran layar */
+  gap: 1.5rem; /* Jarak antar kontainer */
+  margin-top: 2rem;
+}
+
+.customer-container .box {
+  padding: 20px;
+  box-shadow: var(--box-shadow);
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.customer-container .box img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.customer-container img {
+  width: 20%; /* Mengatur gambar memenuhi container */
+  height: auto; /* Mengatur tinggi agar proporsional */
+  object-fit: contain;
+  object-position: center;
+  padding: 10px;
+  background: #f1f1f1;
+  border-radius: 0.5rem;
+}
+
+.stars .bx {
+  color: var(--main-color);
+}
+
+.customer-container .box p {
+  font-size: 0.938rem;
+}
+
+.customer-container .box h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0.5rem 0 0.5rem;
+}
+
+.customer-container .box:hover {
+  background: var(--second-color);
+  transition: 0.2s all linear;
+}
+/* Footer Styles */
+.footer {
+  display: flex;
+  justify-content: space-between; /* Membagi elemen secara rata */
+  padding: 2rem 5rem; /* Memberikan jarak untuk kesan lebih lega */
+  background-color: var(
+    --second-color
+  ); /* Menggunakan warna latar belakang sesuai variabel */
+  flex-wrap: wrap; /* Agar elemen-elemen menyesuaikan saat layar kecil */
+  box-shadow: var(--box-shadow); /* Menggunakan efek bayangan */
+  border-radius: 0.5rem;
+}
+
+/* Masing-masing box di dalam footer */
+.footer-box {
+  flex: 1; /* Membagi elemen footer secara rata */
+  padding: 1rem;
+  margin: 0 1rem;
+  text-align: left; /* Default rata kiri */
+}
+
+/* Heading di dalam footer box */
+.footer-box h2,
+.footer-box h3 {
+  font-size: 1.2rem; /* Ukuran font heading */
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-color); /* Warna teks sesuai variabel */
+}
+
+/* Paragraf dalam footer */
+.footer-box p {
+  font-size: 0.938rem; /* Ukuran font teks */
+  color: var(--text-color); /* Warna teks */
+  margin-bottom: 1rem; /* Jarak bawah antara paragraf */
+}
+
+/* Daftar link di dalam footer */
+.footer-box ul {
+  list-style: none; /* Menghilangkan bullet points */
+  padding: 0; /* Menghilangkan padding default */
+}
+
+.footer-box ul li {
+  margin-bottom: 0.5rem; /* Jarak antar item */
+}
+
+.footer-box ul li a {
+  color: var(--text-color); /* Warna teks sesuai variabel */
+  text-decoration: none; /* Menghilangkan underline pada link */
+}
+
+.footer-box ul li a:hover {
+  color: var(--main-color); /* Warna teks saat hover */
+}
+
+/* Elemen sosial media */
+.social {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem; /* Jarak antar ikon */
+}
+
+.social a .bx {
+  font-size: 24px; /* Ukuran ikon */
+  color: var(--text-color); /* Warna ikon */
+  padding: 10px;
+  background: var(--second-color); /* Warna latar belakang ikon */
+  border-radius: 0.2rem;
+  transition: 0.3s;
+}
+
+.social a .bx:hover {
+  background: var(--main-color); /* Warna saat ikon dihover */
+  color: var(--bg-color); /* Warna teks saat dihover */
+}
+
+/* Kontak informasi */
+.footer-box div {
+  margin-bottom: 0.5rem; /* Jarak bawah pada elemen kontak */
+}
+
+.footer-box div i {
+  margin-right: 10px; /* Jarak antara ikon dan teks */
+  color: var(--main-color); /* Warna ikon pada kontak */
+}
+
+/* Responsivitas pada layar kecil */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Elemen footer menumpuk vertikal */
+    text-align: center;
+    padding: 2rem 2rem; /* Padding yang lebih kecil */
+  }
+
+  .footer-box {
+    margin-bottom: 1.5rem; /* Jarak antar elemen footer */
+  }
+
+  .social {
+    justify-content: center; /* Menyesuaikan posisi ikon sosial media di tengah */
+  }
+}
+.copyright {
+  padding: 20px;
+  text-align: center;
+  background: var(--main-color);
+}
+@media (max-width: 1058px) {
+  header {
+    padding: 16px 60px;
+  }
+  section {
+    padding: 50px 60px;
+  }
+  .home-text h1 {
+    font-size: 2.4rem;
+  }
+}
+@media (max-width: 991px) {
+  header {
+    padding: 16px 4%;
+  }
+  section {
+    padding: 50px 4%;
+  }
+  .home-text h1 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  header {
+    padding: 12px 4%;
+  }
+  #menu-icon {
+    display: initial;
+  }
+  .navbar {
+    position: absolute;
+    top: -570px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--second-color);
+    row-gap: 1.4rem;
+    padding: 20px;
+    transition: 0.3s;
+    text-align: center;
+  }
+  .navbar a {
+    color: var(--text-color);
+  }
+  .navbar a:hover {
+    color: var(--bg-color);
+  }
+  .navbar.active {
+    top: 100%;
+  }
+}
+
+/* From Uiverse.io by vnuny */
+.container {
+  position: relative;
+  box-sizing: border-box;
+  width: fit-content;
+}
+
+.mainbox {
+  box-sizing: border-box;
+  position: relative;
+  width: 230px;
+  height: 50px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  border-radius: 160px;
+  background-color: rgb(0, 0, 0);
+  transition: all 0.3s ease;
+}
+
+.checkbox:focus {
+  border: none;
+  outline: none;
+}
+
+.checkbox:checked {
+  right: 10px;
+}
+
+.checkbox:checked ~ .mainbox {
+  width: 50px;
+}
+
+.checkbox:checked ~ .mainbox .search_input {
+  width: 0;
+  height: 0px;
+}
+
+.checkbox:checked ~ .mainbox .iconContainer {
+  padding-right: 8px;
+}
+
+.checkbox {
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 17px;
+  top: 10px;
+  z-index: 9;
+  cursor: pointer;
+  appearance: none;
+}
+
+.search_input {
+  box-sizing: border-box;
+  height: 100%;
+  width: 170px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding-bottom: 4px;
+  padding-left: 10px;
+  font-size: 1em;
+  color: white;
+  transition: all 0.3s ease;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.search_input::placeholder {
+  color: rgba(255, 255, 255, 0.776);
+}
+
+.iconContainer {
+  box-sizing: border-box;
+  padding-top: 5px;
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.search_icon {
+  box-sizing: border-box;
+  fill: white;
+  font-size: 1.3em;
+}
